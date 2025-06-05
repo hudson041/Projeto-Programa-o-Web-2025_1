@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tela Principal</title>
+  <style>
+    nav { background: #eee; padding: 10px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { display: inline-block; margin-right: 15px; position: relative; }
+    .submenu { display: none; position: absolute; background: #ddd; padding: 5px; }
+    li:hover .submenu { display: block; }
+    .usuario { float: right; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>Serviços
+        <ul class="submenu">
+          <li><a href="#">Serviço 1</a></li>
+          <li><a href="#">Serviço 2</a></li>
+        </ul>
+      </li>
+      <li>Perfil
+        <ul class="submenu">
+          <li><a href="#">Editar Perfil</a></li>
+          <li><a href="#">Preferências</a></li>
+        </ul>
+      </li>
+      <span class="usuario" id="usuarioLogado"></span>
+    </ul>
+  </nav>
+  <h1>Bem-vindo à Tela Principal</h1>
+
+  <script>
+    const usuario = localStorage.getItem('usuarioLogado');
+    if (!usuario) {
+      alert("Usuário não logado!");
+      window.location.href = "login.html";
+    } else {
+      document.getElementById('usuarioLogado').textContent = `Usuário: ${usuario}`;
+    }
+  </script>
+</body>
+</html>
