@@ -14,6 +14,7 @@ o	Senha e Confirmar Senha devem ser iguais.
 •	Mensagens de feedback elegantes (não usar alert; usar toast, modal, div ou span).
 •	Armazenar login e senha no localStorage.
 •	Redirecionar para Tela 2 após o cadastro válido.
+
 🔐 Tela 2 – Tela de Login
 •	Campos: Login, Senha.
 •	Botões: <enviar>, <Cadastrar Novo Usuário>.
@@ -21,6 +22,7 @@ o	Senha e Confirmar Senha devem ser iguais.
 •	Usar o mesmo estilo de feedback visual da Tela 1.
 •	Armazenar login do usuário no localStorage (extra).
 •	Redirecionar para Tela 3 após login válido.
+
 🏠 Tela 3 – Tela Principal
 •	Menu principal com submenus de serviços.
 •	Submenus redirecionam para tópicos específicos.
