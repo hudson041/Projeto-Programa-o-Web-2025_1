@@ -106,7 +106,8 @@
       // Simula salvamento no localStorage
       const usuario = {
         login: e.target.login.value,
-        senha: senha
+        senha: senha,
+        nome: e.target.nome.value
       };
       localStorage.setItem('usuario', JSON.stringify(usuario));
       alert("Usuário cadastrado com sucesso!");
