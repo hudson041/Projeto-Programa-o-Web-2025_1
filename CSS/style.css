@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+.form-container {
+    max-width: 350px;
+    padding: 1rem;
+}
+
+.btn-primary {
+    background-color: #b2d12e;
+    border-color: #b2d12e;
+}
+
+.btn-primary:hover {
+    background-color: #9fbf29;
+    border-color: #9fbf29;
+}
