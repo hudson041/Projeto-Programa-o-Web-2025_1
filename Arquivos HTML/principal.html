@@ -32,14 +32,18 @@
   </nav>
   <h1>Bem-vindo à Tela Principal</h1>
 
-  <script>
-    const usuario = localStorage.getItem('usuarioLogado');
-    if (!usuario) {
-      alert("Usuário não logado!");
-      window.location.href = "login.html";
-    } else {
-      document.getElementById('usuarioLogado').textContent = `Usuário: ${usuario}`;
-    }
-  </script>
+<script>
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+
+  if (!usuario || !usuarioLogado) {
+    alert("Usuário não logado!");
+    window.location.href = "login.html";
+  } else {
+    const primeiroNome = usuario.nome.split(' ')[0];
+    document.getElementById('usuarioLogado').textContent = `Olá, ${primeiroNome}`;
+  }
+</script>
+
 </body>
 </html>
