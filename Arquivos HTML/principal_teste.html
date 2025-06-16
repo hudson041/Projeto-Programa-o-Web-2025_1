@@ -11,36 +11,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css"> <!-- Este é o link para seu arquivo CSS personalizado -->
+    <link rel="stylesheet" href="/Projeto-Programa-o-Web-2025_1/CSS/style.css"> <!-- Este é o link para seu arquivo CSS personalizado -->
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Urban Edge</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#produtos">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#valores">Valores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Logo_Urban_Edge_Dark.png" class="mb-4" height="60" width="100"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#produtos">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#valores">Valores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+        <!-- Área do usuário logado -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown" id="userMenu">
+                </li>
+            </ul>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <header class="bg-dark text-white text-center py-5">
@@ -54,10 +59,15 @@
     <section id="sobre" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Sobre a Urban Edge</h2>
-            <p><strong>Fundação:</strong> 2023</p>
-            <p><strong>Localização:</strong> Curitiba, PR – Brasil</p>
-            <p><strong>Missão:</strong> Oferecer vestuário urbano com atitude, autenticidade e propósito, que represente o estilo de vida das ruas e a individualidade de cada pessoa.</p>
-            <p><strong>Visão:</strong> Ser uma marca referência no cenário streetwear nacional, valorizando a cultura urbana, o design autoral e a expressão da identidade jovem.</p>
+            <p>
+            Fundada em 2023 em Curitiba, a <strong>Urban Edge</strong> nasceu da vontade de expressar nas roupas a essência das ruas e da juventude contemporânea. Mais do que uma marca, somos um movimento que celebra a autenticidade, a atitude e o estilo de vida urbano. 
+            </p>
+            <p>
+            Acreditamos que a moda deve ser uma extensão da identidade de cada pessoa — sem rótulos, sem limites. Por isso, criamos peças <strong>unissex, exclusivas, sustentáveis</strong> e cheias de personalidade, com colaborações que conectam moda, arte de rua, música e cultura hip hop.
+            </p>
+            <p>
+            Nosso propósito é vestir quem busca se expressar com liberdade, com produtos que não apenas acompanham tendências, mas que representam histórias, ideias e causas. Somos resistência criativa em forma de vestuário. Somos Urban Edge: <em>Define Your Urban Identity</em>.
+            </p>
         </div>
     </section>
 
@@ -65,40 +75,110 @@
     <section id="produtos" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Produtos</h2>
-            <p>Oferecemos uma ampla gama de produtos para quem vive a cultura urbana. Nossos itens têm design autêntico e propósito.</p>
+            <p>A Urban Edge é mais do que uma marca — é uma plataforma de expressão para quem vive e respira a cidade. Nossos produtos são pensados para traduzir a atitude das ruas, a criatividade dos becos grafitados, o som dos beats que ecoam nos fones e a liberdade de ser quem se é. Cada peça é desenvolvida com design autoral, priorizando conforto, autenticidade e sustentabilidade. Unimos moda, arte e cultura urbana para oferecer coleções únicas que dialogam com o lifestyle jovem, ousado e consciente.</p>
             <ul class="list-group">
-                <li class="list-group-item">Camisetas</li>
-                <li class="list-group-item">Moletons</li>
-                <li class="list-group-item">Calças Cargo</li>
-                <li class="list-group-item">Bonés e Acessórios</li>
-                <li class="list-group-item">Coleções Exclusivas com Artistas de Rua</li>
-                <li class="list-group-item">Peças Unissex e Genderless</li>
-                <li class="list-group-item">Edições Limitadas e Colecionáveis</li>
-                <li class="list-group-item">Produtos Sustentáveis (Algodão Orgânico, Tingimentos Naturais)</li>
+                <div class="carousel-multi-container mt-4">
+                    <div class="carousel-multi" id="carouselMulti">
+                        <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/ChatGPT Image 13 de jun. de 2025, 15_00_51.png" alt="Produto 1"></div>
+                        <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/ChatGPT Image 13 de jun. de 2025, 15_03_48.png" alt="Produto 2"></div>
+                        <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/ChatGPT Image 13 de jun. de 2025, 15_09_01.png" alt="Produto 3"></div>
+                        <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/ChatGPT Image 13 de jun. de 2025, 15_11_55.png" alt="Produto 4"></div>
+                        <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/ChatGPT Image 13 de jun. de 2025, 15_12_29.png" alt="Produto 5"></div>
+                        <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/ChatGPT Image 13 de jun. de 2025, 15_15_38.png" alt="Produto 6"></div>
+                    </div>
+                    <div class="carousel-controls text-center mt-2">
+                        <button class="btn btn-dark me-2" onclick="scrollCarousel(-1)">‹</button>
+                        <button class="btn btn-dark" onclick="scrollCarousel(1)">›</button>
+                    </div>
+                </div>
             </ul>
         </div>
     </section>
 
-    <!-- Valores -->
-    <section id="valores" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Valores</h2>
-            <ul class="list-group">
-                <li class="list-group-item">Expressão individual e liberdade de estilo</li>
-                <li class="list-group-item">Representatividade e diversidade</li>
-                <li class="list-group-item">Qualidade e sustentabilidade</li>
-                <li class="list-group-item">Cultura urbana e arte de rua</li>
-                <li class="list-group-item">Inovação criativa</li>
-            </ul>
+    <!-- Eventos -->
+<section id="eventos" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Eventos</h2>
+        <p>
+            A Urban Edge está presente nos principais eventos de cultura urbana, lançamentos de coleções colaborativas, batalhas de rap, exposições de arte de rua e festivais independentes. 
+            Participar e promover essas experiências é parte essencial do nosso compromisso com a comunidade e com a cena streetwear brasileira. 
+            Cada evento é uma celebração da liberdade de estilo, da expressão criativa e da conexão entre pessoas que compartilham atitude e propósito.
+        </p>
+
+        <div class="carousel-multi-container mt-4">
+            <div class="carousel-multi" id="carouselEventos">
+                <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Copilot_20250613_155935.png" alt="Evento 1"></div>
+                <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Copilot_20250613_160109.png" alt="Evento 2"></div>
+                <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Copilot_20250613_160229.png" alt="Evento 3"></div>
+                <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Copilot_20250613_161737.png" alt="Evento 4"></div>
+                <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Copilot_20250613_162122.png" alt="Evento 5"></div>
+                <div class="carousel-item-multi"><img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Copilot_20250613_162505.png"></div>
+            </div>
+            <div class="carousel-controls text-center mt-2">
+                <button class="btn btn-dark me-2" onclick="scrollCarouselEventos(-1)">‹</button>
+                <button class="btn btn-dark" onclick="scrollCarouselEventos(1)">›</button>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+    <!-- Valores -->
+<section id="valores" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Nossos Valores</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">🎨 Expressão e Liberdade</h5>
+                        <p class="card-text">Valorizamos o estilo individual como forma de protesto, identidade e criatividade.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">🌎 Diversidade e Representatividade</h5>
+                        <p class="card-text">Nossa moda é feita para todos — sem padrões, sem barreiras, sem rótulos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">♻️ Sustentabilidade com Atitude</h5>
+                        <p class="card-text">Usamos materiais conscientes e incentivamos o consumo responsável e duradouro.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">🖌️ Cultura Urbana</h5>
+                        <p class="card-text">A rua é nosso berço criativo: grafite, hip hop, skate e tudo que pulsa nas cidades.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">🚀 Inovação Criativa</h5>
+                        <p class="card-text">Criamos com propósito e exploramos novas formas de expressar o streetwear.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Contato -->
     <section id="contato" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Contato</h2>
             <p>Entre em contato para saber mais sobre nossos produtos, parcerias ou qualquer dúvida.</p>
-            <form>
+            <form id="formContato">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="nome" required>
@@ -111,21 +191,193 @@
                     <label for="mensagem" class="form-label">Mensagem</label>
                     <textarea class="form-control" id="mensagem" rows="4" required></textarea>
                 </div>
+                <!-- campos -->
                 <button type="submit" class="btn btn-dark">Enviar</button>
             </form>
+            <!-- Mensagem de sucesso -->
+            <div id="mensagemSucesso" class="alert alert-success mt-3 d-none" role="alert">
+                Contato enviado com sucesso!
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p>&copy; 2025 Urban Edge | Todos os direitos reservados</p>
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row text-start">
+            <!-- Coluna 1 -->
+            <div class="col-md-4 mb-4">
+                <h5>Urban Edge</h5>
+                <p>Sua marca de roupas Streetwear favorita.</p>
+                <div class="d-flex gap-2">
+                    <div class="bg-secondary p-2 rounded"><img src="https://img.icons8.com/?size=24&id=13912&format=png&color=000000"/></div>
+                    <div class="bg-secondary p-2 rounded"><img src="https://img.icons8.com/?size=24&id=Xy10Jcu1L2Su&format=png&color=000000"/></div>
+                    <div class="bg-secondary p-2 rounded"><img src="https://img.icons8.com/?size=24&id=6Fsj3rv2DCmG&format=png&color=000000"/></div>
+                </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="col-md-4 mb-4">
+                <h5>Atendimento</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Central de Ajuda</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Trocas e Devoluções</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Termos de Uso</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="col-md-4 mb-4">
+                <h5>Categorias</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Roupas Femininas</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Roupas Masculinas</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Calçados</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Acessórios</a></li>
+                </ul>
+            </div>
         </div>
+        <hr class="border-secondary">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 Urban Edge | Todos os direitos reservados</p>
+            <p class="mb-0">Site criado por <a href="empresa.html" class="text-decoration-underline text-white">Orbitech</a></p>
+        </div>
+    </div>
+</footer>
+
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    
+    <script>
+        // Verificação de login
+        const usuarioLogado = localStorage.getItem('usuarioLogado');
+        if (!usuarioLogado) {
+        window.location.href = "login.html";
+}
+
+    if (!usuario || !usuarioLogado) {
+        alert("Usuário não logado!");
+        window.location.href = "login.html";
+    } else {
+        const primeiroNome = usuario.nome.split(' ')[0];
+        document.getElementById('usuarioLogado').textContent = `Olá, ${primeiroNome}`;
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        const usuarioLogado = localStorage.getItem('usuarioLogado');
+        const userMenu = document.getElementById('userMenu');
+
+        if (!usuario || !usuarioLogado) {
+            // Usuário não logado - mostra opção de login
+            userMenu.innerHTML = `
+                <a class="nav-link" href="login.html">Login</a>
+            `;
+        } else {
+            // Usuário logado - mostra nome e menu
+            const primeiroNome = usuario.nome.split(' ')[0];
+            userMenu.innerHTML = `
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Olá, ${primeiroNome}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" id="logoutLink">Sair</a></li>
+                </ul>
+            `;
+
+            // Adiciona evento de logout
+            document.getElementById('logoutLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('usuarioLogado');
+                window.location.href = 'login.html';
+            });
+        }
+    });
+</script>
+<script>
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById('carouselMulti');
+        const itemWidth = carousel.querySelector('.carousel-item-multi').offsetWidth;
+        carousel.scrollBy({ left: itemWidth * direction * 1.05, behavior: 'smooth' });
+    }
+</script>
+<script>
+    const carousel = document.getElementById('carouselMulti');
+
+    function scrollAuto() {
+        const itemWidth = carousel.querySelector('.carousel-item-multi').offsetWidth;
+        const scrollMax = carousel.scrollWidth - carousel.clientWidth;
+
+        // Se já estiver no fim, volta pro começo
+        if (carousel.scrollLeft + itemWidth >= scrollMax) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            carousel.scrollBy({ left: itemWidth * 1.05, behavior: 'smooth' });
+        }
+    }
+
+    setInterval(scrollAuto, 4000); // Troca a imagem a cada 4 segundos
+</script>
+
+<script>
+    function scrollCarouselEventos(direction) {
+        const carousel = document.getElementById('carouselEventos');
+        const itemWidth = carousel.querySelector('.carousel-item-multi').offsetWidth;
+        carousel.scrollBy({ left: itemWidth * direction * 1.05, behavior: 'smooth' });
+    }
+
+    // Autoplay
+    setInterval(() => {
+        const carousel = document.getElementById('carouselEventos');
+        const itemWidth = carousel.querySelector('.carousel-item-multi').offsetWidth;
+        const scrollMax = carousel.scrollWidth - carousel.clientWidth;
+
+        if (carousel.scrollLeft + itemWidth >= scrollMax) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            carousel.scrollBy({ left: itemWidth * 1.05, behavior: 'smooth' });
+        }
+    }, 4000);
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('#contato form');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            form.reset();
+
+            // Remove mensagens antigas se houver
+            const antiga = document.getElementById('mensagemTemp');
+            if (antiga) antiga.remove();
+
+            // Cria nova mensagem
+            const mensagem = document.createElement('div');
+            mensagem.id = 'mensagemTemp';
+            mensagem.className = 'alert alert-success mt-3';
+            mensagem.textContent = 'Contato enviado com sucesso!';
+            form.parentNode.appendChild(mensagem);
+
+            // Redireciona após 2 segundos
+            setTimeout(() => {
+                window.location.href = '#';
+            }, 2000);
+        });
+    });
+</script>
+
+
 </body>
 
 </html>

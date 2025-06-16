@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBITECH CONNECTION</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #5271ff;
+            --secondary: #38b6ff;
+            --dark: #000e4d;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f5ff;
+            overflow-x: hidden;
+        }
+        
+        /* Estilo do Logo Personalizado */
+        .brand-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        .logo-main {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-sub {
+            font-size: 1.4rem;
+            color: var(--dark);
+            font-weight: 700;
+            margin-top: -5px;
+            position: relative;
+        }
+        
+        .logo-sub::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 2px;
+        }
+        
+        .navbar {
+            padding: 1rem 0;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 14, 77, 0.1);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+        }
+        
+        .nav-pills .nav-link:hover,
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(82, 113, 255, 0.1) 0%, rgba(56, 182, 255, 0.1) 100%);
+            padding: 6rem 0 4rem;
+            margin-bottom: 4rem;
+            border-radius: 0 0 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            transform: translate(40%, -40%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            transform: translate(-40%, 40%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .hero-title span {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-subtitle span {
+            color: var(--secondary);
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 14, 77, 0.1);
+            transition: all 0.4s ease;
+            margin-bottom: 2rem;
+            background-color: white;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(82, 113, 255, 0.2);
+        }
+        
+        .card-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(82, 113, 255, 0.1) 0%, rgba(56, 182, 255, 0.1) 100%);
+        }
+        
+        .card-icon i {
+            font-size: 3.5rem;
+            color: var(--primary);
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        .card-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .card-text {
+            color: var(--dark);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 4rem 0;
+            border-radius: 2rem;
+            margin: 5rem 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-section::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-primary {
+            background-color: var(--dark);
+            border: none;
+            padding: 0.8rem 2.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0, 14, 77, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: #001c7a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 14, 77, 0.4);
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem 2.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0, 14, 77, 0.2);
+        }
+        
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 14, 77, 0.3);
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .footer h5 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer h5::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary);
+            padding-left: 8px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            color: var(--dark);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--primary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 0 3rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .logo-main {
+                font-size: 1.8rem;
+            }
+            
+            .logo-sub {
+                font-size: 1.1rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <div class="brand-logo">
+                            <img src="/Projeto-Programa-o-Web-2025_1/CSS/imagens/Logo_Orbitech.png" class="mb-2" height="100" width="100"/>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sobre</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contato</a>
+                            </li>
+                            <li class="nav-item ms-2">
+                                <a class="nav-link active" href="#">Solicitar Orçamento</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title">Soluções <span>Tecnológicas</span> para Impulsionar seu Negócio</h1>
+                    <h2 class="hero-subtitle">Inovação, <span>Confiança</span> e Resultados</h2>
+                    <p class="lead" style="color: #000e4d;">
+                        Conectamos sua empresa às melhores soluções tecnológicas com atendimento personalizado e expertise de mercado.
+                    </p>
+                    <div class="mt-4">
+                        <button class="btn btn-primary me-2">Nossos Serviços</button>
+                        <button class="btn btn-light">Fale Conosco</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="position-relative">
+                        <div class="bg-primary rounded-circle position-absolute top-0 start-0" style="width: 200px; height: 200px; opacity: 0.1; transform: translate(-20%, -20%);"></div>
+                        <div class="bg-secondary rounded-circle position-absolute bottom-0 end-0" style="width: 200px; height: 200px; opacity: 0.1; transform: translate(20%, 20%);"></div>
+                        <div class="position-relative text-center">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'%3E%3Crect width='500' height='400' fill='%23f0f5ff'/%3E%3Cpath d='M250,150 Q300,100 350,150 T450,200 L450,350 L50,350 L50,200 Q100,150 150,200 T250,150 Z' fill='%235271ff' opacity='0.2'/%3E%3Ccircle cx='250' cy='200' r='100' fill='%2338b6ff' opacity='0.1'/%3E%3Ccircle cx='150' cy='250' r='60' fill='%23000e4d' opacity='0.1'/%3E%3Ccircle cx='350' cy='250' r='60' fill='%23000e4d' opacity='0.1'/%3E%3C/svg%3E" 
+                                alt="Technology Illustration" class="img-fluid rounded-3 shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container">
+        <div class="section-title">
+            <h2>Nossos Diferenciais</h2>
+            <p>Conheça as vantagens de trabalhar com a ORBITECH CONNECTION</p>
+        </div>
+        
+        <div class="row">
+            <!-- Feature 1 -->
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Atendimento Personalizado</h3>
+                        <p class="card-text">Cada cliente recebe atenção exclusiva da nossa equipe para garantir resultados únicos e soluções sob medida para suas necessidades específicas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tecnologia de Ponta</h3>
+                        <p class="card-text">Utilizamos as melhores práticas e ferramentas do mercado para entregar projetos inovadores que mantêm sua empresa à frente da concorrência.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Resultados Comprovados</h3>
+                        <p class="card-text">Nossa experiência e metodologia comprovada geram valor real e crescimento mensurável para os negócios dos nossos clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="cta-title">Vamos conversar?</h2>
+                    <h3 class="cta-subtitle">Entre em contato e impulsione seus resultados</h3>
+                    <button class="btn btn-light btn-lg mt-3" style="color: #000e4d;">
+                        Solicitar Orçamento <i class="ms-2 fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="brand-logo mb-4">
+                        <div class="logo-main" style="color: white; -webkit-text-fill-color: white;">ORBITECH</div>
+                        <div class="logo-sub" style="color: var(--secondary);">CONNECTION</div>
+                    </div>
+                    <p class="mb-4" style="color: rgba(255, 255, 255, 0.7);">
+                        Transformando ideias em soluções tecnológicas inovadoras para impulsionar o seu negócio.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Institucional</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Suporte</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5>Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> Av. Paulista, 1000 - São Paulo, SP</li>
+                        <li class="mb-3"><i class="fas fa-phone me-2"></i> (11) 9999-9999</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-2"></i> contato@orbitech.com.br</li>
+                        <li class="mb-3"><i class="fas fa-clock me-2"></i> Seg-Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ORBITECH CONNECTION. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
